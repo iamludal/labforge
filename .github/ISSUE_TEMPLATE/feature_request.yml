@@ -1,0 +1,26 @@
+name: ✨ Feature request
+description: Suggest an idea or an improvement.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for your suggestion! Please search [existing issues](https://github.com/iamludal/labforge/issues) first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: 🤔 Problem
+      description: What are you trying to do, and why is it hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: 💡 Proposed solution
+      description: How would you like it to work? Include a Markdown example if the lab format is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔀 Alternatives considered
+      description: Workarounds or other solutions you have considered, including how claat or other tools handle it.

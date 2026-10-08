@@ -1,0 +1,5 @@
+node_modules/
+lib/
+/assets/
+dist/
+.DS_Store

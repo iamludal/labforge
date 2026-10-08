@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📘 Documentation
+    url: https://github.com/iamludal/labforge/tree/main/docs
+    about: Authoring guide, CLI reference, deployment and migration from claat.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/iamludal/labforge/security/advisories/new
+    about: Please report vulnerabilities privately.

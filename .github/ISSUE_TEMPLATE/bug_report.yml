@@ -1,0 +1,54 @@
+name: 🐛 Bug report
+description: Something does not work as expected.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please search [existing issues](https://github.com/iamludal/labforge/issues) first.
+        To report a security vulnerability, follow the [security policy](https://github.com/iamludal/labforge/security/policy) instead.
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Description
+      description: What happened, and what did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 🔁 Steps to reproduce
+      description: Include a minimal lab (Markdown) that reproduces the issue, if relevant.
+      placeholder: |
+        1. Create `labs/demo.md` with…
+        2. Run `npx labforge build labs`
+        3. See…
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: 💻 Command output
+      description: Errors or warnings printed by labforge.
+      render: text
+  - type: input
+    id: labforge-version
+    attributes:
+      label: 📦 labforge version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: node-version
+    attributes:
+      label: 🟢 Node.js version
+      description: Output of `node --version`.
+      placeholder: "v24.0.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 🌐 Operating system and browser
+      description: Browser only needed for display or navigation issues.
+      placeholder: macOS 26, Firefox 150

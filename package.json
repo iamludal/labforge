@@ -1,0 +1,71 @@
+{
+  "name": "labforge",
+  "version": "0.1.0",
+  "description": "Turn Markdown files into step-by-step static codelabs.",
+  "keywords": [
+    "codelab",
+    "codelabs",
+    "claat",
+    "tutorial",
+    "workshop",
+    "markdown",
+    "static-site-generator",
+    "documentation",
+    "cli"
+  ],
+  "homepage": "https://github.com/iamludal/labforge#readme",
+  "bugs": {
+    "url": "https://github.com/iamludal/labforge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamludal/labforge.git"
+  },
+  "license": "MIT",
+  "author": "Ludal",
+  "type": "module",
+  "bin": {
+    "labforge": "lib/cli.js"
+  },
+  "files": [
+    "lib",
+    "assets"
+  ],
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "build": "bun run build:cli && bun run build:runtime && bun run build:css",
+    "build:cli": "tsc -p tsconfig.json",
+    "build:runtime": "esbuild src/runtime/app.ts --bundle --minify --format=iife --target=es2020 --outfile=assets/app.js",
+    "build:css": "tailwindcss -i src/styles/app.css -o assets/app.css --minify",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p src/runtime/tsconfig.json",
+    "prepublishOnly": "bun run build",
+    "example": "bun run build && bun lib/cli.js serve examples/labs"
+  },
+  "packageManager": "bun@1.2.23",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "hast-util-to-string": "^3.0.1",
+    "mdast-util-to-string": "^4.0.0",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "^4.5.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.1.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/hast": "^3.0.5",
+    "@types/mdast": "^4.0.4",
+    "@types/node": "^26.6.4",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}
