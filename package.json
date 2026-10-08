@@ -1,6 +1,6 @@
 {
   "name": "labforge",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Turn Markdown files into step-by-step static codelabs.",
   "keywords": [
     "codelab",
