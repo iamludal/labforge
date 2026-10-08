@@ -199,6 +199,7 @@ Options:
   -o, --out <dir>       Output directory (default: dist)
   -p, --port <port>     Dev server port (default: 4000)
       --accent <color>  Accent color: blue, indigo, teal, green, orange, rose, violet (default: blue)
+  -v, --version         Show the version
   -h, --help            Show this help
 ```
 

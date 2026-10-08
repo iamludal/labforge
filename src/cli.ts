@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFileSync } from "node:fs";
 import { parseArgs } from "node:util";
 import { build } from "./build/index.js";
 import { serve } from "./serve.js";
@@ -14,8 +15,16 @@ Options:
   -o, --out <dir>       Output directory (default: dist)
   -p, --port <port>     Dev server port (default: 4000)
       --accent <color>  Accent color: ${ACCENTS.join(", ")} (default: blue)
+  -v, --version         Show the version
   -h, --help            Show this help
 `;
+
+function version(): string {
+  const pkg = JSON.parse(
+    readFileSync(new URL("../package.json", import.meta.url), "utf8"),
+  ) as { version: string };
+  return pkg.version;
+}
 
 async function main(): Promise<void> {
   const { positionals, values } = parseArgs({
@@ -24,9 +33,15 @@ async function main(): Promise<void> {
       out: { type: "string", short: "o", default: "dist" },
       port: { type: "string", short: "p", default: "4000" },
       accent: { type: "string", default: "blue" },
+      version: { type: "boolean", short: "v", default: false },
       help: { type: "boolean", short: "h", default: false },
     },
   });
+
+  if (values.version) {
+    console.log(version());
+    return;
+  }
 
   const [command, input = "labs"] = positionals;
   if (values.help || !command) {

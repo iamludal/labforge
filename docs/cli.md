@@ -38,6 +38,7 @@ npx labforge serve labs --port 4000
 | `-o, --out <dir>`   | `dist`  | Output directory.                 |
 | `-p, --port <port>` | `4000`  | Port of the dev server (`serve`). |
 | `--accent <color>`  | `blue`  | Accent color (see below).         |
+| `-v, --version`     |         | Show the version.                 |
 | `-h, --help`        |         | Show the help.                    |
 
 ## 🎨 Accent color
